@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Royal Spice Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="brand">
+            <span>📊</span> Admin Dashboard
+        </div>
+        <nav>
+            <a href="index.html" class="nav-link">← Back to POS</a>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        
+        <!-- STATS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Today's Sales</h3>
+                <p id="stat-today">₹0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <p id="stat-total">₹0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <p id="stat-orders">0</p>
+            </div>
+        </div>
+
+        <!-- SALES REPORT -->
+        <div class="section-card">
+            <h2 class="section-title">Sales Report</h2>
+            <div style="max-height: 400px; overflow-y: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date & Time</th>
+                            <th>Items</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sales-table-body">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- MENU MANAGEMENT -->
+        <div class="section-card">
+            <h2 class="section-title">Menu Management</h2>
+            
+            <!-- Add New Item Form -->
+            <form onsubmit="addNewItem(event)" class="add-item-form">
+                <input type="text" id="new-name" placeholder="Item Name" required style="flex: 2;">
+                <input type="number" id="new-price" placeholder="Price (₹)" required style="flex: 1;">
+                <input type="text" id="new-image" placeholder="Image URL (Optional)" style="flex: 2;">
+                <button type="submit" class="btn-confirm" style="flex: 0 0 auto; min-width: 120px;">+ Add Item</button>
+            </form>
+
+            <div id="menu-list-admin" class="admin-menu-list">
+                <!-- Admin Items List -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
